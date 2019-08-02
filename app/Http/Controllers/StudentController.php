@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use App\Http\Requests;
+use App\Student;
 
 class StudentController extends Controller
 {
@@ -19,7 +21,15 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        return Student::create($request->all());
+        // return Student::create($request->all());
+
+        $student = new Student([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            
+        ]);
+        $student->save();
     }
 
     public function update(Request $request, $id)
