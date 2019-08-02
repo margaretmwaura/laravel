@@ -21,15 +21,8 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        // return Student::create($request->all());
-
-        $student = new Student([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-            
-        ]);
-        $student->save();
+        return Student::create($request->all());
+   
     }
 
     public function update(Request $request, $id)

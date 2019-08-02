@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/api', 'StudentsController');
+Route::resource('/api/student', 'StudentController');
